@@ -20,7 +20,7 @@ body{
     height:119px;
     position: absolute;
     bottom:0;
-    left:78px;
+    left:44px;
 }
 .obstacle{
     width: 166px;
@@ -38,6 +38,9 @@ body{
 
 .obstacleanim{
     animation: obstacleanim 3.0s linear infinite;
+}
+.gameOver{
+    visibility: hidden;
 }
 @keyframes dino {
     0%{
