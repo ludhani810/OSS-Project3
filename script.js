@@ -4,22 +4,33 @@ document.onkeydown = function (e) {
         dino = document.querySelector('.dino');
         dino.classList.add('animatedino');
         setTimeout(() => {
-            dino.classList.remove('animatedino')
-        }, 700);
+            dino.classList.remove('animatedino')},500);
 
     }
 }
-setInterval(() => {
+
+function jump(){
     dino = document.querySelector('.dino');
+    dino.classList.add('animatedino');
+    setTimeout(function(){ 
+         dino.classList.remove('animatedino')},500);
+    }
+
+
+
+
+
+setInterval(() => {
+    dino  = document.querySelector('.dino');
     gameOver = document.querySelector('.gameOver');
-    obstacle = document.querySelector('.obstacle');
+    zom = document.querySelector('.zom');
 
     dx = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
     dy = parseInt(window.getComputedStyle(dino, null).getPropertyValue('top'));
 
 
-    ox = parseInt(window.getComputedStyle(obstacle, null).getPropertyValue('left'));
-    oy = parseInt(window.getComputedStyle(obstacle, null).getPropertyValue('top'));
+    ox = parseInt(window.getComputedStyle(zom, null).getPropertyValue('left'));
+    oy = parseInt(window.getComputedStyle(zom, null).getPropertyValue('top'));
 
     offsetX = Math.abs(dx - ox);
     offsetY = Math.abs(dy - oy);
@@ -27,9 +38,9 @@ setInterval(() => {
 
      console.log(offsetX, offsetY)
 
-    if (offsetX < 88 && offsetY < 52) {
+    if (offsetX < 43 && offsetY < 52) {
         gameOver.style.visibility = 'visible';
-        obstacle.classList.remove('obstacleanim') ; 
-    }
-    
-}, 100);
+        zom.classList.remove('obstacleanim') ; 
+    }    }, 100);
+
+
